@@ -76,7 +76,6 @@ public class MainGarage {
 		String marca;
 		String tipoAlimentazione;
 		int cilindrata;
-		String strVuota;
 		
 		System.out.println("Inserisci l'anno di immatricolazione");
 		annoImmatricolazione = in.nextInt();
