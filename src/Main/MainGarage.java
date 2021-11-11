@@ -10,7 +10,6 @@ public class MainGarage {
 		Scanner in = new Scanner(System.in);
 		Garage garage = new Garage();
 		byte scelta;
-		String strVuota;
 
 		do {
 			do {
@@ -21,7 +20,7 @@ public class MainGarage {
 				System.out.println("5) per stampare la situazione posti");
 				System.out.println("0) per uscire");
 				scelta = in.nextByte();
-				strVuota = in.nextLine();
+				in.nextLine();
 
 			}while(scelta!=0 && scelta!=1 && scelta!=2 && scelta!=3 && scelta!=4 && scelta!=5);
 			
@@ -30,16 +29,16 @@ public class MainGarage {
 				Automobile auto = (Automobile)inserisciVeicoloMenu(scelta);
 				System.out.println("Inserisci il numero di porte");
 				int numPorte = in.nextInt();
-				strVuota = in.nextLine();
+				in.nextLine();
 				auto.setNumeroPorte(numPorte);
 				garage.immettiNuovoVeicolo(auto);
 				break;
 			case 2:
 				Furgone furgone = (Furgone)inserisciVeicoloMenu(scelta);
-				System.out.println("Inserisci la capacit‡ del furgone");
-				int capacit‡ = in.nextInt();
-				strVuota = in.nextLine();
-				furgone.setCapacit‡Carico(capacit‡);
+				System.out.println("Inserisci la capacit√† del furgone");
+				int capacit√† = in.nextInt();
+				in.nextLine();
+				furgone.setCapacit√†Carico(capacit√†);
 				garage.immettiNuovoVeicolo(furgone);
 				break;
 			case 3:
@@ -49,14 +48,14 @@ public class MainGarage {
 				moto.setTipologia(tipologia);
 				System.out.println("Inserisci il numero di tempi della moto (2/4)");
 				int numTempi = in.nextInt();
-				strVuota = in.nextLine();
+				in.nextLine();
 				moto.setNumTempiMotore(numTempi);
 				garage.immettiNuovoVeicolo(moto);
 				break;
 			case 4:
 				System.out.println("Di quale parcheggio si vuole rimuovere il veicolo?");
 				int numeroParcheggio = in.nextInt();
-				strVuota = in.nextLine();
+				in.nextLine();
 				System.out.println(garage.estraiVeicolo(numeroParcheggio));
 				break;
 			case 5:
@@ -81,14 +80,14 @@ public class MainGarage {
 		
 		System.out.println("Inserisci l'anno di immatricolazione");
 		annoImmatricolazione = in.nextInt();
-		strVuota = in.nextLine();
+		in.nextLine();
 		System.out.println("Inserire la marca del mezzo");
 		marca = in.nextLine();
 		System.out.println("Inserire il tipo di alimentazione");
 		tipoAlimentazione = in.nextLine();
 		System.out.println("Inserisci la cilindrata");
 		cilindrata = in.nextInt();
-		strVuota = in.nextLine();
+		in.nextLine();
 		switch (scelta) {
 		case 1:
 			veicolo = new Automobile(annoImmatricolazione, marca, tipoAlimentazione, cilindrata);
