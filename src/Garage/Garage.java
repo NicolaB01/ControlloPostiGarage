@@ -18,7 +18,7 @@ public class Garage {
 			System.out.println("La vettura si trova nel parcheggio "+(ind+1));
 			System.out.println("Rimangono "+Garage.postiDisponibili+" posti per il riempimento del garage\n");
 		}else {
-			System.out.println("Il parcheggio č pieno");
+			System.out.println("Il parcheggio è pieno");
 		}
 	}
 	public VeicoliAMotore estraiVeicolo(int numeroParcheggio) {
