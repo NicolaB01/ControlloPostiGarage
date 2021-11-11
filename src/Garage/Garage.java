@@ -9,7 +9,7 @@ public class Garage {
 	private VeicoliAMotore[] veicolo = new VeicoliAMotore[POSTI_TOTALI];
 	
 	public void immettiNuovoVeicolo(VeicoliAMotore veicolo) {
-		if (postiVuoti()) {
+		if (isPostoVuoto()) {
 			ind = trovaIndice();
 			this.veicolo[trovaIndice()] = veicolo;
 			Garage.postiOccupati++;
@@ -18,7 +18,7 @@ public class Garage {
 			System.out.println("La vettura si trova nel parcheggio "+(ind+1));
 			System.out.println("Rimangono "+Garage.postiDisponibili+" posti per il riempimento del garage\n");
 		}else {
-			System.out.println("Il parcheggio Ë pieno");
+			System.out.println("Il parcheggio ƒç pieno");
 		}
 	}
 	public VeicoliAMotore estraiVeicolo(int numeroParcheggio) {
@@ -31,7 +31,7 @@ public class Garage {
 	}
 	public void stampaSituazionePosti() {
 		if (postiOccupati == 0) {
-			System.out.println("La lista Ë vuota");
+			System.out.println("La lista ƒç vuota");
 		}else {
 			for(int i=0; i<POSTI_TOTALI; i++)
 				if (veicolo[i] != null)
@@ -39,14 +39,14 @@ public class Garage {
 		}
 	}
 
-	public boolean postiVuoti() {
+	private boolean isPostoVuoto() {
 		if (Garage.postiDisponibili > 0) {
 			return true;
 		}
 		return false;
 	}
 	
-	public int trovaIndice() {
+	private int trovaIndice() {
 		for (int i=0; i<POSTI_TOTALI; i++)
 			if (this.veicolo[i] == null)
 				return i;
